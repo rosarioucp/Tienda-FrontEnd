@@ -2,7 +2,7 @@ const juegos = [
     {
         id: 1,
         nombre: "FIFA 23",
-        precio: 13,
+        precio: 13.99,
         descripcion: "Simulador de futbol",
         categoria: "Deporte",
         imagen: "https://placehold.co/200x150"
@@ -35,7 +35,7 @@ const juegos = [
         id: 5,
         nombre: "Counter Strike 2",
         precio: 14.59,
-        descripcion: "Terror, Supervivencia, Cooperativo.",
+        descripcion: "Disparos, multijugador",
         categoria: "Acción",
         imagen: "https://placehold.co/200x150"
     },
@@ -48,3 +48,21 @@ const juegos = [
         imagen: "https://placehold.co/200x150"
     }
 ]
+function mostrarJuegos(lista) {
+    const contenedor = document.querySelector('.contenedor-productos')
+    contenedor.innerHTML = ''
+
+    lista.forEach(function(juego) {
+        contenedor.innerHTML += `
+            <div class="card">
+                <img src="${juego.imagen}" alt="${juego.nombre}">
+                <h2>${juego.nombre}</h2>
+                <p>${juego.descripcion}</p>
+                <p>$${juego.precio}</p>
+                <button onclick="comprar(${juego.id})">Comprar</button>
+            </div>
+        `
+    })
+}
+
+mostrarJuegos(juegos)
