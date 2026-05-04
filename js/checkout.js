@@ -10,11 +10,12 @@ function confirmarCompra() {
     const apellido = document.getElementById('apellido').value
     const documento = document.getElementById('documento').value
     const telefono = document.getElementById('telefono').value
+    const Mail = document.getElementById('Mail').value
     const provincia = document.getElementById('provincia').value
     const localidad = document.getElementById('localidad').value
     const cantidad = document.getElementById('cantidad').value
 
-    if (!nombre || !apellido || !documento || !telefono || !provincia || !localidad) {
+    if (!nombre || !apellido || !documento || !telefono || !Mail || !provincia || !localidad) {
         alert('Por favor completá todos los campos')
         return
     }
@@ -26,6 +27,7 @@ function confirmarCompra() {
         apellido: apellido,
         documento: documento,
         telefono: telefono,
+        Mail: Mail,
         provincia: provincia,
         localidad: localidad
     }
