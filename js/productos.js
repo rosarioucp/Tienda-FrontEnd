@@ -66,3 +66,11 @@ function mostrarJuegos(lista) {
 }
 
 mostrarJuegos(juegos)
+
+function comprar(id) {
+    const juego = juegos.find(function(j) {
+        return j.id === id
+    })
+     localStorage.setItem('juegoSeleccionado', JSON.stringify(juego))
+     window.location.href = 'detalle.html'
+}
