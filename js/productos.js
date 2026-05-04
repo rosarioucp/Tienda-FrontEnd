@@ -17,7 +17,7 @@ const juegos = [
     },
     {
         id: 3,
-        nombre: "Minecraft Legends",
+        nombre: "Minecraft",
         precio: 23.99,
         descripcion: "Construcción, exploración y supervivencia",
         categoria: "Aventura",
@@ -44,7 +44,7 @@ const juegos = [
         nombre: "Grand Theft Auto V",
         precio: 44.99,
         descripcion: "Mundo abierto, acción",
-        categoria: "Acción, aventura, carrera",
+        categoria: "Acción, aventura",
         imagen: "https://placehold.co/200x150"
     }
 ]
