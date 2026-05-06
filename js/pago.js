@@ -20,10 +20,8 @@ function irAPagar() {
     localStorage.clear()
     window.location.href = 'index.html'
 }
-// Ejemplo de función dentro de tu JS de pago
+
 function procesarPago() {
-    // ... tu lógica de validación ...
-    
-    // Si todo está ok, redirigimos:
+    localStorage.clear();
     window.location.href = "confirmacioncompra.html";
 }
