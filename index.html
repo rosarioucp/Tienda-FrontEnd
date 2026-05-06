@@ -8,14 +8,29 @@
 </head>
 <body>
     <header>
-    <h1>Tienda Gamer</h1>
-    <input type="text" placeholder="¿Qué juego desea buscar?">
-</header>
-      <main>
-        <div class="contenedor-productos">
+        <h1>Tienda Gamer</h1>
+        <input type="text" id="buscador" placeholder="¿Qué juego desea buscar?">
+    </header>
 
+    <main>
+        <div class="hero-banner">
+            <h2>Descubrí los mejores juegos</h2>
         </div>
-        </main>
+
+        <div class="category-filters">
+            <button class="category-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+            <button class="category-btn" onclick="filtrarCategoria('Acción')">Acción</button>
+            <button class="category-btn" onclick="filtrarCategoria('Aventura')">Aventura</button>
+            <button class="category-btn" onclick="filtrarCategoria('Deporte')">Deportes</button>
+            <button class="category-btn" onclick="filtrarCategoria('Terror')">Terror</button>
+        </div>
+
+        <div class="contenedor-productos"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Tienda Gamer. Todos los derechos reservados.</p>
+    </footer>
 
     <script src="js/productos.js"></script>
 </body>

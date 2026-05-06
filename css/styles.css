@@ -1,0 +1,529 @@
+/* ============================
+   RESET & VARIABLES
+   ============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #121212;
+    --bg-secondary: #1a1a2e;
+    --bg-card: #16213e;
+    --bg-hover: #0f3460;
+    --accent: #e94560;
+    --accent-hover: #ff6b81;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0;
+    --border-color: #2a2a4a;
+    --success: #00c853;
+    --gradient: linear-gradient(135deg, #e94560, #0f3460);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 12px 40px rgba(233, 69, 96, 0.3);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* ============================
+   HEADER / NAVBAR
+   ============================ */
+header {
+    background: var(--bg-secondary);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header input[type="text"] {
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    width: 350px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+header input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
+}
+
+header input[type="text"]::placeholder {
+    color: var(--text-secondary);
+}
+
+/* ============================
+   MAIN CONTAINER
+   ============================ */
+main {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* ============================
+   HERO BANNER (Index)
+   ============================ */
+.hero-banner {
+    background: var(--gradient);
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.hero-banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-banner p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+/* ============================
+   CATEGORY FILTERS
+   ============================ */
+.category-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 0.6rem 1.5rem;
+    border: 2px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* ============================
+   PRODUCT GRID (Index)
+   ============================ */
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* ============================
+   PRODUCT CARDS
+   ============================ */
+.card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-hover);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.card p {
+    padding: 0 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.card .precio {
+    color: var(--success);
+    font-size: 1.3rem;
+    font-weight: 800;
+    padding: 0.5rem 1rem;
+}
+
+.card button {
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    padding: 0.8rem;
+    background: var(--gradient);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(233, 69, 96, 0.5);
+}
+
+/* ============================
+   DETAIL PAGE
+   ============================ */
+.detalle-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.detalle-contenedor img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+}
+
+.detalle-info {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.detalle-info h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detalle-info p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.detalle-info .precio {
+    color: var(--success);
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.detalle-info button {
+    padding: 1rem 2rem;
+    background: var(--gradient);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    align-self: flex-start;
+}
+
+.detalle-info button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(233, 69, 96, 0.5);
+}
+
+/* ============================
+   CHECKOUT PAGE
+   ============================ */
+.checkout-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+#resumen-compra {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+#resumen-compra img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#resumen-compra h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+#resumen-compra p {
+    color: var(--success);
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formulario h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.formulario label {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+.formulario input,
+.formulario select {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.formulario input:focus,
+.formulario select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.2);
+}
+
+.formulario button {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--gradient);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.formulario button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(233, 69, 96, 0.5);
+}
+
+/* ============================
+   PAYMENT PAGE
+   ============================ */
+.pago-contenedor {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.pago-contenedor h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#resumen-compra {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid var(--border-color);
+}
+
+#total-compra {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--success);
+    margin-bottom: 2rem;
+}
+
+.pago-contenedor button {
+    padding: 1.2rem 3rem;
+    background: var(--gradient);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pago-contenedor button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(233, 69, 96, 0.5);
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+footer {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 2px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+   ============================ */
+@media (max-width: 1024px) {
+    .detalle-contenedor,
+    .checkout-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .detalle-contenedor img {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    header input[type="text"] {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .contenedor-productos {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    .detalle-info,
+    .formulario {
+        padding: 1.5rem;
+    }
+
+    .hero-banner {
+        padding: 2rem 1rem;
+    }
+
+    .hero-banner h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-productos {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .category-filters {
+        gap: 0.5rem;
+    }
+
+    .category-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+}
