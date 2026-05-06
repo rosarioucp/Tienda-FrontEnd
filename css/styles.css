@@ -9,6 +9,7 @@
 
 :root {
     --font-gamer: 'Orbitron', sans-serif;
+    --font-nombres: 'Kanit', sans-serif;
     --bg-primary: #121212;
     --bg-secondary: #1a1a2e;
     --bg-card: #16213e;
@@ -32,7 +33,24 @@ body {
     min-height: 100vh;
     line-height: 1.6;
 }
+/* --- EFECTOS DE TARJETAS --- */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
 
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card img {
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05); 
+}
 /* ============================
    HEADER / NAVBAR
    ============================ */
@@ -140,10 +158,10 @@ main {
 .category-btn:hover,
 .category-btn.active {
     background: var(--accent);
-    border-color: var(--accent);
-    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--accent); /* Efecto de luz */
+    border: none;
+    color: white;
 }
-
 /* ============================
    PRODUCT GRID (Index)
    ============================ */
@@ -546,4 +564,22 @@ footer {
     font-weight: bold !important;
     margin: 15px 0 !important;
     display: block !important;
+}
+.hero-banner {
+    border-radius: 25px; /* Más redondeado como las consolas modernas */
+    background: var(--gradient);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.card h2 {
+    font-family: var(--font-nombres) !important;
+    font-weight: 700;
+    font-style: italic; /* Esto le da sensación de velocidad/acción */
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
 }
