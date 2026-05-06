@@ -8,6 +8,7 @@
 }
 
 :root {
+    --font-gamer: 'Orbitron', sans-serif;
     --bg-primary: #121212;
     --bg-secondary: #1a1a2e;
     --bg-card: #16213e;
@@ -526,4 +527,23 @@ footer {
         padding: 0.5rem 1rem;
         font-size: 0.75rem;
     }
+}
+   h1, #juego-nombre {
+    font-family: var(--font-gamer) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.card p:last-of-type {
+    font-family: var(--font-gamer) !important;
+    font-size: 1.2rem !important;
+    color: var(--accent-hover) !important;
+    font-weight: bold !important;
+}
+#juego-precio {
+    font-family: var(--font-gamer) !important;
+    font-size: 1.8rem !important;
+    color: var(--accent-hover) !important;
+    font-weight: bold !important;
+    margin: 15px 0 !important;
+    display: block !important;
 }
